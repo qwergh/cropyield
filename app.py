@@ -66,9 +66,9 @@ def display_prediction():
      # giving a title
     st.title('How much yield will you receive?')
 
-    Areas = df['Area'].unique().tolist()
-    Items = df['Item'].unique().tolist()
-    Years = df['Year'].unique().tolist()
+    Areas = voice_data['Area'].unique().tolist()
+    Items = voice_data['Item'].unique().tolist()
+    Years = voice_data['Year'].unique().tolist()
     
     # getting the input data from the user
     col1, col2, col3 = st.columns(3)
