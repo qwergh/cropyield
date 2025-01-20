@@ -62,7 +62,7 @@ def SmokerDrinker_prediction(input_data):
         #return 'The Person has a high possibility to be a Smoker(81.6%) and a high possibility to be Drinker(78.8%).'
 
     
-def display_prediction():
+def display_prediction(item):
      # giving a title
     st.title('How much yield will you receive?')
 
