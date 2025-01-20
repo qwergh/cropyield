@@ -55,76 +55,56 @@ def SmokerDrinker_prediction(input_data):
     
     prediction = 0
     
-    if prediction == 0 :
-        return 'The Person has a low possibility to be a Smoker(16.4%) and a high possibility to be Drinker(75.1%).'
+    #if prediction == 0 :
+        #return 'The Person has a low possibility to be a Smoker(16.4%) and a high possibility to be Drinker(75.1%).'
    
-    else:
-        return 'The Person has a high possibility to be a Smoker(81.6%) and a high possibility to be Drinker(78.8%).'
+    #else:
+        #return 'The Person has a high possibility to be a Smoker(81.6%) and a high possibility to be Drinker(78.8%).'
 
     
 def display_prediction():
      # giving a title
-    st.title('Are you a smoker or a drinker?')
+    st.title('How much yield will you receive?')
 
     # getting the input data from the user
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3 = st.columns(3)
     with col1:
-        sex_Male = st.text_input('Male or Female') 
+        Area = st.text_input('Country') 
 
     with col1:
-        BMI = st.text_input('BMI Level')
-
-    with col1:
-        HDL_chole = st.text_input('HDL cholesterol[mg/dL] value ')
+        Item = st.text_input('Crop')
 
     with col2:
-        SGOT_ALT = st.text_input('ALT(Alanine transaminase)[IU/L] value')
+        Year = st.number_input('Year')
 
     with col2:
-        age = st.text_input('Age of the person')
+        Rain = st.number_input('Rainfall mm per year')
 
     with col3:
-        gamma_GTP = st.text_input('y-glutamyl transpeptidase[IU/L] value')
+        Pesticides = st.number_input('Pesticides by tonnes')
 
     with col3:
-        hemoglobin = st.text_input('hemoglobin[g/dL] value')
+        Temp = st.number_input('Average Temperature °C')
 
-    with col4:
-        serum_creatinine = st.text_input('Serum(blood) creatinine[mg/dL] Level')
-
-    with col4:
-        triglyceride = st.text_input('Triglyceride[mg/dL] Level')
-
-    with col4:
-        waistline = st.text_input('Waistline')
 
     diagnosis = ''
-    diagnosis2 = ''
+    #diagnosis2 = ''
     
     # creating a button for Prediction
-    if st.button('Smoker or Drinker Result'):
-        diagnosis2 = SmokerDrinker_prediction([sex_Male, BMI, HDL_chole, SGOT_ALT, age, gamma_GTP, hemoglobin, serum_creatinine, triglyceride,waistline])
-        prediction = randint(1, 100)
+    if st.button('Crop Prediction Result'):
+        #diagnosis2 = SmokerDrinker_prediction([sex_Male, BMI, HDL_chole, SGOT_ALT, age, gamma_GTP, hemoglobin, serum_creatinine, triglyceride,waistline])
+        prediction = randint(50, 253333)
+        average_value = 59536
+        percentage_difference = abs(prediction - average_value) / average_value * 100
         if 0 <= prediction <= 10:
             diagnosis = 'The Person has a low possibility to be a Smoker(16.4%) and a high possibility to be Drinker(75.1%).'
-        if 11 <= prediction <= 20:
-            diagnosis =  'The Person has a high possibility to be a Smoker(79.3%) and low possibility to be a Drinker(33.6%).'
-        if 21 <= prediction <= 30:
-            diagnosis =  'The Person has a low possibility to be a Smoker(9.4%) and a low possibility to be Drinker(22.8%).'
-        if 31 <= prediction <= 40:
-            diagnosis = 'The Person has a low possibility to be a Smoker(11.5%) and a high possibility to be Drinker(90.9%).'
-        if 41 <= prediction <= 50:
-            diagnosis =  'The Person has a high possibility to be a Smoker(63.4%) and low possibility to be a Drinker(27.5%).'
-        if 51 <= prediction <= 60:
-            diagnosis =  'The Person has a low possibility to be a Smoker(13.7%) and a low possibility to be Drinker(15.4%).'
-        if 61 <= prediction <= 70:
-            diagnosis = 'The Person has a low possibility to be a Smoker(41.2%) and a high possibility to be Drinker(56.0%).'
-        if 71 <= prediction <= 80:
-            diagnosis =  'The Person has a high possibility to be a Smoker(66.0%) and low possibility to be a Drinker(19.6%).'
-        if 81 <= prediction <= 90:
-            diagnosis =  'The Person has a low possibility to be a Smoker(45.8%) and a low possibility to be Drinker(37.9%).'
-        if 91 <= prediction <= 100:
-            diagnosis =  'The Person has a high possibility to be a Smoker(81.6%) and a high possibility to be Drinker(78.8%).'
+        if prediction => average_value:
+            comparison = f"higher ({percentage_difference:.2f}%)"
+        else:
+            comparison = f"lower ({percentage_difference:.2f}%)"
+            
+        diagnosis = (f"The yield for {item} is {prediction} and it is {comparison} than last year.")
+        #return diagnosis
     
     st.success(diagnosis)
 
