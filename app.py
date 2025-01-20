@@ -28,8 +28,15 @@ local_css("style.css")
 
 def display_dataset():
 
+    st.title('Dataset')
+
+    st.write( """
+
+        This dataset was cretaed for this project using 4 distinct dataset,  Pesticides and Yield, which are sourced from the Food and Agriculture Organization (FAO), and dataset on Rainfall and Average Temperature, which are obtained from the World Data Bank. 
+             
+   """)
     # Display the voice dataset
-    st.subheader("Crop Yield")
+    st.subheader("Crop Yield Dataset")
     st.write(voice_data)
 
 
