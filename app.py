@@ -69,13 +69,13 @@ def display_prediction():
     # getting the input data from the user
     col1, col2, col3 = st.columns(3)
     with col1:
-        Area = st.text_input('Country') 
+        Area = st.selectbox('Country', options=Area)
 
     with col1:
-        Item = st.text_input('Crop')
+        Item = st.selectbox('Crop', options=item)
 
     with col2:
-        Year = st.text_input('Year')
+        Year = st.selectbox('Year', options=Year)
 
     with col2:
         Rain = st.number_input('Rainfall mm per year')
