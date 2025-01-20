@@ -109,7 +109,7 @@ def display_prediction():
             else:
                 comparison = f"lower ({percentage_difference:.2f}%)"
 
-            diagnosis = (f"The yield for {Item} is {prediction}hg/ha and it is {comparison} than the previous year.")
+            diagnosis = (f"The yield for {Item} is {prediction} hg/ha and it is {comparison} than the previous year.")
     
     st.success(diagnosis)
 
