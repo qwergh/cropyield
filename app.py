@@ -7,7 +7,7 @@ from random import randint
 
 
 # Load the dataset
-voice_data = pd.read_excel("final_yield.csv", skiprows=1)
+voice_data = pd.read_csv("final_yield.csv", skiprows=1)
 
 # Set Streamlit theme
 st.set_page_config(
