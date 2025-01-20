@@ -75,7 +75,7 @@ def display_prediction():
         Item = st.text_input('Crop')
 
     with col2:
-        Year = st.number_input('Year')
+        Year = st.year_input('Year')
 
     with col2:
         Rain = st.number_input('Rainfall mm per year')
