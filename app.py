@@ -98,7 +98,7 @@ def display_prediction():
         percentage_difference = abs(prediction - average_value) / average_value * 100
         if 0 <= prediction <= 10:
             diagnosis = 'The Person has a low possibility to be a Smoker(16.4%) and a high possibility to be Drinker(75.1%).'
-        if prediction => average_value:
+        if prediction > average_value:
             comparison = f"higher ({percentage_difference:.2f}%)"
         else:
             comparison = f"lower ({percentage_difference:.2f}%)"
