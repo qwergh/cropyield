@@ -66,16 +66,20 @@ def display_prediction():
      # giving a title
     st.title('How much yield will you receive?')
 
+    Areas = df['Area'].unique().tolist()
+    Items = df['Item'].unique().tolist()
+    Years = df['Year'].unique().tolist()
+    
     # getting the input data from the user
     col1, col2, col3 = st.columns(3)
     with col1:
-        Area = st.selectbox('Country', options=Area)
+        Area = st.selectbox('Country', options=Areas)
 
     with col1:
-        Item = st.selectbox('Crop', options=item)
+        Item = st.selectbox('Crop', options=Items)
 
     with col2:
-        Year = st.selectbox('Year', options=Year)
+        Year = st.selectbox('Year', options=Years)
 
     with col2:
         Rain = st.number_input('Rainfall mm per year')
