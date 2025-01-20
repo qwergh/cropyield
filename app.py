@@ -124,7 +124,8 @@ def display_prediction():
 
 def main():
    
-    st.sidebar.image("logo.png", use_column_width=True)
+    #st.sidebar.image("logo.png", use_column_width=True)
+    st.sidebar.image("logo.png", use_container_width=True)
     with st.sidebar:
         selected = option_menu('Crop Yield Prediction Web App ',
 
