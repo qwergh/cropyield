@@ -68,7 +68,6 @@ def display_prediction():
 
     Areas = voice_data['Area'].unique().tolist()
     Items = voice_data['Item'].unique().tolist()
-    Years = voice_data['Year'].unique().tolist()
     
     # getting the input data from the user
     col1, col2, col3 = st.columns(3)
@@ -79,7 +78,7 @@ def display_prediction():
         Item = st.selectbox('Crop', options=Items)
 
     with col2:
-        Year = st.selectbox('Year', options=Years)
+        Year = st.text_input('Year')
 
     with col2:
         Rain = st.number_input('Rainfall mm per year')
