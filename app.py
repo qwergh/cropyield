@@ -62,7 +62,7 @@ def SmokerDrinker_prediction(input_data):
         #return 'The Person has a high possibility to be a Smoker(81.6%) and a high possibility to be Drinker(78.8%).'
 
     
-def display_prediction(item):
+def display_prediction():
      # giving a title
     st.title('How much yield will you receive?')
 
@@ -103,7 +103,7 @@ def display_prediction(item):
         else:
             comparison = f"lower ({percentage_difference:.2f}%)"
             
-        diagnosis = (f"The yield for {item} is {prediction} and it is {comparison} than last year.")
+        diagnosis = (f"The yield for {Item} is {prediction} and it is {comparison} than last year.")
         #return diagnosis
     
     st.success(diagnosis)
